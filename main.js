@@ -540,7 +540,7 @@ async function getSharedLocations() {
       augmentCookie(google_cookie_header, response.headers);
       try {
         // parse and save user locations
-        const locationdata = JSON.parse(response.data.split('\n').slice(1, -1).join(''));
+        const locationdata = JSON.parse(response.data.split('\n')[1]);
         const userobjarr = parseLocationData(locationdata);
         return userobjarr;
       } catch (e) {
